@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mx-auto" href="#">Weather Dashboard</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Check Your City's Weather</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="cityInput" placeholder="Enter city name" aria-label="City Name" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="getWeatherBtn" type="button">Check Weather</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="spinnerWrapper" class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-light" id="spinner" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div id="errorMsg" class="alert alert-danger mt-4 text-center" role="alert" style="display: none;">
+                    Error fetching weather data. Please try again.
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div id="weatherInfo" class="card text-white mt-4 weather-card" style="display: none;">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Weather in <span id="cityName"></span></h2>
+                        <div class="row text-center">
+                            <div class="col">
+                                <h5>Temperature</h5>
+                                <p id="temperature" class="display-4">--</p>
+                            </div>
+                            <div class="col">
+                                <h5>Weather</h5>
+                                <p id="weather">--</p>
+                            </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                            <div class="col">
+                                <h5>Humidity</h5>
+                                <p id="humidity">--%</p>
+                            </div>
+                            <div class="col">
+                                <h5>Wind Speed</h5>
+                                <p id="windSpeed">-- m/s</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
